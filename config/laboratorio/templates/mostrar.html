@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Información Laboratorios</title>
+</head>
+<body>
+    <h2 style="text-align:center; color: rgb(23, 133, 133);"> Información Laboratorios </h2>
+    <table align="center">
+            <thead>
+                <tr>
+                    <th class="campo">ID</th>
+                    <th class="campo">Nombre</th>
+                    <th class="campo">Ciudad</th>
+                    <th class="campo">País</th>
+                    <th class="campo">Editar</th>
+                    <th class="campo">Eliminar</th>
+                </tr>
+            </thead>
+        <tbody>
+        {% for lab in laboratorios %}
+                    <tr>
+                        <td class="campo">{{lab.id}}</td>
+                        <td class="campo">{{lab.nombre}}</td>
+                        <td class="campo">{{lab.ciudad}}</td>
+                        <td class="campo">{{lab.pais}}</td>
+                        <td class="campo">
+                            <a href="editar/{{lab.id}}">Editar</a>
+                        </td>
+                        <td class="campo">
+                            <a href="eliminar/{{lab.id}}">Eliminar</a></td>
+                    </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <br><br>    
+    <div id="inf">
+    
+            <p>¿Información de los laboratorios?</p>
+        <p>
+            <a href="{% url 'agregar' %}"> Ir a la página de agregar</a>
+        </p>
+        <p>¡Has visitado esta página {{ visit_count }} veces!</p>
+    </div>
+</body>
+<style>
+    .campo{
+        padding: 10px;
+        border: 2px solid rgb(109, 162, 192);
+        border-radius: 4px;
+    }
+
+    #inf{
+        margin-left: 30%;
+        margin-right: 30%;
+        text-align: center;
+        padding-top: 1%;
+        background-color: aliceblue;
+        padding-bottom: 1%;
+    }
+
+</style>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h1>Actualizar Laboratorio</h1>
+            <table align="center">
+                <tr>
+                    <td class="borde">Nombre laboratorio</td>
+                    <td><input type="text" placeholder="Nombre" name="nombre"</td>
+                </tr>
+                <tr>
+                    <td class="borde">Ciudad</td>
+                    <td><input type="text" placeholder="Ciudad" name="ciudad" </td>
+                </tr>
+                <tr>
+                    <td class="borde">País</td>
+                    <td><input type="text" placeholder="Pais" name="pais" </td>                   
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit"class="btn btn-success"></td>
+                </tr>
+        </table>
+        <br><br>
+            <div class="inf">
+            ¿Información de los laboratorios?
+           
+        <p>
+            <a href="{% url 'mostrar' %}">Ir a la página de inicio</a> </p>
+        </div>
+    </form>
+    
+</body>
+<style>
+    form{
+        margin: 2%;
+        padding: 2%;
+        background-color: aliceblue;
+    }
+    .borde{
+        border: 2px solid rgb(90, 180, 221);
+        border-radius: 3px;
+        background-color: rgb(243, 234, 231);
+    }
+    .inf, h1{
+        text-align: center;
+        color: rgb(32, 57, 68);
+    }
+</style>
+</html>

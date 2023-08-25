@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <h2 style="color: rgb(72, 150, 150);"> Editar Laboratorios</h2>
+    <form action="/edit_labs/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{lab.id}}">
+            <table style="width:50%" align="center">
+                <tr>
+                    <td>Nombre laboratorio</td>
+                    <td><input type="text" value="{{lab.nombre}}" name="nombre"</td>
+                </tr>
+                <tr>
+                    <td>Ciudad</td>
+                    <td><input type="text" value="{{lab.ciudad}}" name="ciudad" </td>
+                </tr>
+                <tr>
+                    <td>País</td>
+                    <td><input type="text" value="{{lab.pais}}" name="pais" </td>                   
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" name="edit_labs" value="guardar" class="btn btn-success"></td>
+                </tr>
+        </table>
+        <br><br>
+            <div id="inf">
+                <p>¿Información de los laboratorios?</p>
+                
+                <p><a href="{% url 'mostrar' %}">Ir a la página de inicio</a></p>
+            </div>
+    </form>
+</body>
+<style>
+        #inf, h2{
+        margin-left: 30%;
+        margin-right: 30%;
+        text-align: center;
+        padding-top: 1%;
+        background-color: aliceblue;
+        padding-bottom: 1%;
+    }
+
+</style>
+</html>
